@@ -16,20 +16,20 @@ package main
 import "fmt" // We need this here because we use fmt.Printf in this package
 
 func moveZeroes(nums []int) {
-	j := 0
-	// Move non-zero items to the left
-	for i := 0; i < len(nums); i++ {
-		if nums[i] != 0 {
-			nums[j] = nums[i];
-			j++;
-		}
-	}
+  j := 0 // In place declaration with implicit type
+  // Move non-zero items to the left
+  for i := 0; i < len(nums); i++ {
+    if nums[i] != 0 {
+      nums[j] = nums[i];
+      j++;
+    }
+  }
 
-	// Fill in the rest of the items with zeros
-	for j < len(nums) {
-		nums[j] = 0 // I'd like to write nums[j++] = 0 here
-		j++         // but Go does not support it
-	}
+  // Fill in the rest of the items with zeros
+  for j < len(nums) {
+    nums[j] = 0 // I'd like to write nums[j++] = 0 here
+    j++         // but Go does not support it
+  }
 }
 
 func testCase1() {
@@ -40,13 +40,13 @@ func testCase1() {
 }
 
 func testCase2() {
-	nums := []int{0}
-	fmt.Printf("Example 2:\nInput: nums = %v\n", nums)
-	moveZeroes(nums)
-	fmt.Printf("Output: = %v\n", nums)
-  }
+  nums := []int{0}
+  fmt.Printf("Example 2:\nInput: nums = %v\n", nums)
+  moveZeroes(nums)
+  fmt.Printf("Output: = %v\n", nums)
+}
 
 func main() {
-	testCase1()
-	testCase2()
+  testCase1()
+  testCase2()
 }
