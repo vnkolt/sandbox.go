@@ -45,7 +45,7 @@ func lengthOfLongestSubstring(s string) int {
 	for start := 0; start < len(s); start++ {
 		for end := start + 1; end < len(s); end++ {
 			if end-start+1 > max_longest_substring_len {
-				if IsUnique(s, start, end-start+1) == false {
+				if !IsUnique(s, start, end-start+1) {
 					break
 				}
 				if end-start+1 > max_longest_substring_len {
@@ -63,7 +63,7 @@ func test(s string, answer int) {
 	res := lengthOfLongestSubstring(s)
 
 	fmt.Printf("Lenght of the longest substring without repeating characters is %d\n", res)
-	if answer != 3 {
+	if answer != res {
 		fmt.Printf("Test failed for string %v, result=%d, expected result = %d\n", s, res, answer)
 	}
 
