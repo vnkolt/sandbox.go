@@ -30,12 +30,11 @@ func longestPalindrome(s string) string {
 		return s
 	}
 
-	max_left, left, right := 0, 0, 0
-	max_len := 1
+	max_left, max_len := 0, 1
 
 	for start := 0; start < len && len-start > max_len/2; {
-		left = start
-		right = start
+		left := start
+		right := start
 		for right < len-1 && s[right+1] == s[right] {
 			right++
 		}
