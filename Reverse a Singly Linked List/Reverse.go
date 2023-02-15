@@ -2,9 +2,14 @@ package main
 
 /*
 
-  head                                                                             tail
+ Suppose we have a singly linked list where each node is a
+ structure that contains some data and pointer to the next node.
+ The last node points to nil that means end-of-list or tail
 
+ head                                                                              tail
  | 0 | -> | 1 | -> | 2 | -> | 3 | -> | 4 | -> | 5 | -> | 6 | -> | 7 | -> | 8 | -> | 9 |
+
+ We need to reverse the list like this:
 
  | 9 | -> | 8 | -> | 7 | -> | 6 | -> | 5 | -> | 4 | -> | 3 | -> | 2 | -> | 1 | -> | 0 |
 
