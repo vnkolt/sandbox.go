@@ -14,6 +14,7 @@ package main
 // C             100
 // D             500
 // M             1000
+//
 // For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 //
 // Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
@@ -23,9 +24,7 @@ package main
 // C can be placed before D (500) and M (1000) to make 400 and 900.
 // Given a roman numeral, convert it to an integer.
 //
-//
 // Example 1:
-//
 // Input: s = "III"
 // Output: 3
 // Explanation: III = 3.
@@ -61,6 +60,7 @@ func romanToInt(s string) int {
 		return 0
 	}
 
+	// Create and initialize helper map where byte is a key and int is a value
 	rmap := map[byte]int{
 		'I': 1,
 		'V': 5,
@@ -107,12 +107,11 @@ func test(roman_num string, expected int) {
 
 func main() {
 
-	test("MMMDCCXXIV", 3724)
-
 	test("I", 1)
 	test("III", 3)
 	test("LVIII", 58)
 	test("MCMXCIV", 1994)
+	test("MMMDCCXXIV", 3724)
 	test("MMMCMXCIX", 3999)
 
 }
